@@ -1,0 +1,40 @@
+.hero {
+    color: var(--color-bright);
+    margin-top: calc(var(--size-sm) * 5);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // min-height: 70vh;
+        gap: var(--size-sm);
+    }
+
+    &__info {
+        display: inline-flex;
+        align-items: center;
+        font-size: var(--size-xs);
+        gap: var(--size-sm);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__description {
+        font-weight: 200;
+        font-size: var(--size-xs);
+        margin-top: var(--size-sm);
+        text-align: center;
+
+    }
+
+    &__headline {
+        color: var(--color-bright);
+        font-size: 4vw;
+        margin-bottom: 0;
+    }
+
+    &__button {
+        margin-top: var(--size-sm);
+    }
+}

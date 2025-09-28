@@ -1,0 +1,36 @@
+.tagline {
+
+    position: relative;
+
+    &__headline {
+        margin: 0;
+    }
+
+    &__background {
+        position: absolute;
+        left: -30%;
+        right: -30%;
+        width: 160vw;
+        transform: translateY(-10%);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+    }
+
+    &__item {
+        font-size: var(--size-sm);
+        font-size: var(--size-xs);
+        font-family: Second;
+        color: var(--color-bright);
+        width: 70vw;
+
+
+        &--right {
+            margin-left: auto;
+            text-align: right;
+        }
+    }
+}

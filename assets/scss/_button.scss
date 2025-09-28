@@ -1,0 +1,13 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Second;
+    color: var(--color-main);
+    border-radius: var(--size-sm);
+    padding: var(--size-md) var(--size-xl);
+    background-color: var(--color-bright);
+    text-align: center;
+    max-width: max-content;
+    width: 100%;
+}

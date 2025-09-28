@@ -1,0 +1,27 @@
+.audience {
+    &__headline {
+        color: var(--color-bright);
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-sm);
+    }
+
+    &__item {
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: var(--size-sm);
+        padding: var(--size-sm);
+        color: var(--color-bright);
+        font-size: var(--size-sm);
+
+        &--sapn-2 {
+            grid-column: span 2;
+        }
+    }
+
+}
