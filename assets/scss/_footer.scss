@@ -1,0 +1,214 @@
+.footer {
+    min-height: auto;
+    position: relative;
+    align-items: start;
+    // background-color: var(--color-grey);
+    // margin: 0;
+    color: var(--color-white);
+    border-radius: 30px 30px 0 0;
+    padding: var(--size-sm) 0;
+
+    &__content {
+        display: grid;
+        min-height: 100%;
+        // padding: 0 var(--space-lg);
+        z-index: 3;
+        gap: var(--space-3xl);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+
+        //   margin: auto;
+        @media (min-width: 1200px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: var(--size-sm);
+        }
+    }
+
+    &__logo {
+        height: calc(var(--fs-xl) * 1.5);
+        grid-column: 1 / -1;
+        display: block;
+
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &__links {
+        display: none;
+
+        @media (min-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-sm);
+        }
+    }
+
+    &__contacts {
+        grid-column: 1 / -1;
+
+        @media (min-width: 1200px) {
+            grid-column: 4;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+    }
+
+    &__label {
+        font-size: var(--fs-2xl); // 32px mobile
+        font-weight: 600;
+        margin-bottom: var(--space-md);
+
+        @media (min-width: 1200px) {
+            font-size: 24px;
+        }
+
+        @media (min-width: 1400px) {
+            font-size: 36px;
+        }
+    }
+
+    &__sub-label {
+        font-size: var(--fs-lg);
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.8);
+        margin: var(--size-sm) 0 var(--size-sm);
+
+        @media (min-width: 1200px) {
+            font-size: 14px;
+        }
+
+        @media (min-width: 1400px) {
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+        font-size: var(--size-sm); // 20px mobile
+
+        a,
+        span {
+            color: var(--color-white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+            line-height: 1.5;
+            font-size: var(--size-md); // 20px mobile
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 1200px) {
+
+            a,
+            span {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+
+            a,
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--size-sm);
+        gap: var(--size-sm);
+
+        @media (min-width: 1200px) {
+            margin-top: var(--space-xl);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--size-sm);
+        }
+    }
+
+    &__icons {
+        display: flex;
+        gap: var(--size-sm);
+
+        a {
+            transition: opacity 0.3s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+
+            @media (min-width: 1200px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__link {
+        font-size: var(--size-sm);
+        color: var(--color-white);
+        text-decoration: underline;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 14px;
+        }
+
+        @media (min-width: 1400px) {
+            font-size: 16px;
+        }
+    }
+
+    &__copy {
+        grid-column: 1 / -1;
+        line-height: var(--size-sm);
+        display: flex;
+        justify-content: space-between;
+        gap: var(--size-sm);
+        flex-direction: column;
+        font-size: var(--fs-xs);
+        margin-top: var(--size-sm);
+        padding-top: var(--size-sm);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        opacity: 0.7;
+
+        @media (min-width: 640px) {
+            flex-direction: row;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 12px;
+        }
+
+        @media (min-width: 1400px) {
+            font-size: 14px;
+        }
+    }
+
+    &__copy-text {
+        max-width: 550px;
+        width: 100%;
+    }
+}
