@@ -13,11 +13,17 @@
 
     &__info {
         display: inline-flex;
+        flex-direction: column;
         align-items: center;
         font-size: var(--size-xs);
-        gap: var(--size-sm);
+        gap: var(--size-xxxs);
         text-transform: uppercase;
         font-weight: 600;
+
+        @include sm {
+            gap: var(--size-sm);
+            flex-direction: row;
+        }
     }
 
     &__description {
@@ -32,6 +38,7 @@
         color: var(--color-bright);
         font-size: 4vw;
         margin-bottom: 0;
+        text-align: center;
     }
 
     &__button {

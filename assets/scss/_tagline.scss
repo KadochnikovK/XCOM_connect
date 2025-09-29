@@ -12,6 +12,12 @@
         right: -30%;
         width: 160vw;
         transform: translateY(-10%);
+
+        @include sm {
+            left: -10%;
+            right: -10%;
+            width: 120vw;
+        }
     }
 
     &__content {
@@ -22,11 +28,14 @@
 
     &__item {
         font-size: var(--size-sm);
-        font-size: var(--size-xs);
+
         font-family: Second;
         color: var(--color-bright);
         width: 70vw;
 
+        &--small {
+            font-size: var(--size-xs);
+        }
 
         &--right {
             margin-left: auto;
