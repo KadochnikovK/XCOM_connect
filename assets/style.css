@@ -293,7 +293,12 @@ li {
   font-size: var(--size-sm);
   font-family: Second;
   color: var(--color-bright);
-  width: 70vw;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .tagline__item {
+    width: 70vw;
+  }
 }
 .tagline__item--small {
   font-size: var(--size-xs);

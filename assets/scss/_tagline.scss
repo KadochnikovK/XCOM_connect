@@ -1,5 +1,4 @@
 .tagline {
-
     position: relative;
 
     &__headline {
@@ -31,7 +30,11 @@
 
         font-family: Second;
         color: var(--color-bright);
-        width: 70vw;
+        width: 100%;
+
+        @include md {
+            width: 70vw;
+        }
 
         &--small {
             font-size: var(--size-xs);
