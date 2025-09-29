@@ -1,0 +1,54 @@
+.speakers {
+    padding: var(--size-sm);
+    &__slider {
+        overflow: visible !important;
+    }
+
+    &__slide {
+        height: 50vh !important;
+        border-radius: var(--size-sm);
+        padding: var(--size-xxxs);
+        border: calc(var(--size-xxxs) * 0.5) solid var(--color-bright);
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+
+        &--color {
+            background-color: var(--color-bright);
+            color: var(--color-main);
+            .speakers__image-block {
+                background-color: var(--color-main);
+            }
+            .speakers__link {
+                color: var(--color-main);
+            }
+        }
+    }
+
+    &__image-block {
+        height: 60%;
+        border-radius: var(--size-xxs);
+        background-color: var(--color-bright);
+        margin-bottom: auto;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__link {
+        // display: flex;
+        /* Убираем flex-grow и flex */
+        align-items: end;
+        font-family: Second;
+        font-size: var(--size-xxxs);
+        margin-top: auto; /* Это прижмет ссылку к низу */
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}

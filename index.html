@@ -1,212 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>X-COM CONNECT</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/plugins/fontawesome/css/all.min.css">
-</head>
 
-<body>
+    <script src="./assets/plugins/swiper/swiper.js"></script>
+
+    <link rel="stylesheet" href="./assets/plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/swiper/swiper.css" />
+
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
     <header class="container header">
-        <div class="container__content header__content">
-            <img class="logo" src="assets/images/logo.svg" alt="X-COM" />
-        </div>
+      <div class="container__content header__content">
+        <img class="logo" src="assets/images/logo.svg" alt="X-COM" />
+      </div>
     </header>
     <main class="main">
-        <section class="container hero">
-            <div class="container__content hero__content">
-                <p class="paragraph hero__info">онлайн-конференция
-                    <span class="divider"></span> 27 ноября<span class="divider"></span>Четверг
-                </p>
-                <h1 class="headline hero__headline">X-COM CONNECT</h1>
-                <p class="paragraph hero__info">контур.talk
-                    <span class="divider"></span>11:00 - 18:00
-                </p>
-                <p class="paragraph hero__description">Розыгрыш призов самым активным слушателям/промокоды<br />
-                    со скидкой на продукцию из шопа
-                    <br />+ услуги
-                </p>
-                <a href="#" class="button hero__button">Занять место</a>
+      <section class="container hero">
+        <div class="container__content hero__content">
+          <p class="paragraph hero__info">онлайн-конференция <span class="divider"></span> 27 ноября<span class="divider"></span>Четверг</p>
+          <h1 class="headline hero__headline">X-COM CONNECT</h1>
+          <p class="paragraph hero__info">контур.talk <span class="divider"></span>11:00 - 18:00</p>
+          <p class="paragraph hero__description">
+            Розыгрыш призов самым активным слушателям/промокоды<br />
+            со скидкой на продукцию из шопа
+            <br />+ услуги
+          </p>
+          <a href="#" class="button hero__button">Занять место</a>
+        </div>
+      </section>
+      <section class="container audience">
+        <div class="container__content audience__content">
+          <h2 class="headline audience__headline">Для кого конференция?</h2>
+          <div class="audience__list">
+            <div class="audience__item">СМИ и блогеры из сферы IT и бизнеса</div>
+            <div class="audience__item">Технические директоры, IT-директоры</div>
+            <div class="audience__item audience__item--sapn-2">Cтартапы, решающие конкретные бизнес задачи</div>
+            <div class="audience__item">Фонды, корпоративные акселераторы, руководители портфельных компаний</div>
+            <div class="audience__item">Представители государственных и частных инновационных институтов развития</div>
+          </div>
+        </div>
+      </section>
+      <section class="container tagline">
+        <img src="assets/images/line.svg" class="tagline__background" alt="" />
+
+        <div class="container__content tagline__content z2">
+          <div class="tagline__item tagline__item--left">Конференция,</div>
+          <div class="tagline__item tagline__item--right outline-text">которую создаете вы</div>
+          <div class="tagline__item tagline__item--left">Ваш запрос — в центре дискуссии</div>
+          <div class="tagline__item tagline__item--right outline-text">Ваше решение — в фокусе нашего внимания</div>
+        </div>
+      </section>
+      <section class="container advantages">
+        <div class="container__content advantages__content z2">
+          <div class="advantages__head">
+            <div class="advantages__number">
+              <svg viewBox="0 0 74 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M72 2V242H36.5352V51.208L5.2334 75.7188L2 78.251V29.5645L2.78125 28.9648L37.3154 2.41406L37.8545 2H72Z" stroke="white" stroke-width="4" />
+              </svg>
             </div>
-        </section>
-        <section class="container audience">
-            <div class="container__content audience__content">
-                <h2 class="headline audience__headline">Для кого конференция?</h2>
-                <div class="audience__list">
-                    <div class="audience__item">СМИ и блогеры из сферы IT и бизнеса</div>
-                    <div class="audience__item">Технические директоры, IT-директоры</div>
-                    <div class="audience__item audience__item--sapn-2">Cтартапы, решающие конкретные бизнес задачи</div>
-                    <div class="audience__item">Фонды, корпоративные акселераторы, руководители портфельных компаний
-                    </div>
-                    <div class="audience__item">Представители государственных и частных инновационных институтов
-                        развития</div>
-
+            <div class="advantages__description">
+              <div class="unite unite--column">
+                <div class="advantages__wrapper">
+                  <h1 class="advantages__headline headline">Почему стоит посетить X-Com Connect</h1>
+                  <img style="width: 7vw" src="assets/images/question.svg" alt="" />
+                  <!-- <div style="width: 100%"></div> -->
+                  <div class="advantages__line"></div>
                 </div>
+                <p class="paragraph advantages__info">Получите максимум пользы за один день*</p>
+              </div>
             </div>
-        </section>
-        <section class="container tagline">
-            <img src="assets/images/line.svg" class="tagline__background" alt="">
-
-            <div class="container__content tagline__content z2">
-                <div class="tagline__item tagline__item--left">Конференция,</div>
-                <div class="tagline__item tagline__item--right outline-text">которую создаете вы</div>
-                <div class="tagline__item tagline__item--left">Ваш запрос — в центре дискуссии</div>
-                <div class="tagline__item tagline__item--right outline-text">Ваше решение — в фокусе нашего внимания
-                </div>
+          </div>
+          <div class="advantages__list">
+            <div class="advantages__item">Найдите готовые ответы: Узнайте о реальных технологических решениях, которые уже сегодня закрывают актуальные запросы рынка. Не теории,</div>
+            <div class="advantages__item advantages__item--white">
+              Прямой выход на клиентов и партнеров: Используйте конференцию как эффективный инструмент нетворкинга. Знакомьтесь с теми, кто ищет ваши технологии, или найдите тех, чьи продукты нужны
+              вам
             </div>
-        </section>
-        <section class="container advantages">
-            <div class="container__content advantages__content z2">
-                <div class="advantages__head">
-                    <div class="advantages__number">
-                        <svg viewBox="0 0 74 244" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M72 2V242H36.5352V51.208L5.2334 75.7188L2 78.251V29.5645L2.78125 28.9648L37.3154 2.41406L37.8545 2H72Z"
-                                stroke="white" stroke-width="4" />
-                        </svg>
-
-                    </div>
-                    <div class="advantages__description">
-                        <div class="unite unite--column">
-                            <div class="advantages__wrapper">
-                                <h1 class="advantages__headline headline">Почему стоит посетить X-Com Connect</h1>
-                                <img style=" width: 7vw;" src="assets/images/question.svg" alt="">
-                                <!-- <div style="width: 100%"></div> -->
-                                <div class="advantages__line"></div>
-                            </div>
-                            <p class="paragraph advantages__info">Получите максимум пользы за один день*</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="advantages__list">
-                    <div class="advantages__item">Найдите готовые ответы: Узнайте о реальных технологических решениях,
-                        которые уже сегодня закрывают актуальные запросы рынка. Не теории, </div>
-                    <div class="advantages__item advantages__item--white">Прямой выход на клиентов
-                        и партнеров: Используйте конференцию как эффективный инструмент нетворкинга. Знакомьтесь
-                        с теми, кто ищет ваши технологии, или найдите тех, чьи продукты нужны вам</div>
-                    <div class="advantages__item">Протестируйте решения: Для инвесторов и фондов — это уникальная
-                        возможность «запустить» свои портфельные компании
-                        в среду потенциальных заказчиков и получить обратную связь</div>
-                </div>
-        </section>
-        <section class="container tagline">
-
-            <div class="container__content tagline__content z2">
-                <h2 class="headline tagline__headline">Треки X-com</h2>
-                <div class="tagline__item tagline__item--small tagline__item--left outline-text">Образование</div>
-                <div class="tagline__item tagline__item--small tagline__item--left">Безопасность</div>
-                <div class="tagline__item tagline__item--small tagline__item--left outline-text">Промышленность</div>
-                <div class="tagline__item tagline__item--small tagline__item--left">DeepTech (Hardware)
-                </div>
-                <div class="tagline__item tagline__item--small tagline__item--left outline-text">ИИ
-                </div>
+            <div class="advantages__item">
+              Протестируйте решения: Для инвесторов и фондов — это уникальная возможность «запустить» свои портфельные компании в среду потенциальных заказчиков и получить обратную связь
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section class="container tagline">
+        <div class="container__content tagline__content z2">
+          <h2 class="headline tagline__headline">Треки X-com</h2>
+          <div class="tagline__item tagline__item--small tagline__item--left outline-text">Образование</div>
+          <div class="tagline__item tagline__item--small tagline__item--left">Безопасность</div>
+          <div class="tagline__item tagline__item--small tagline__item--left outline-text">Промышленность</div>
+          <div class="tagline__item tagline__item--small tagline__item--left">DeepTech (Hardware)</div>
+          <div class="tagline__item tagline__item--small tagline__item--left outline-text">ИИ</div>
+        </div>
+      </section>
 
-        <section class="container speakers">
-            <div class="container__content speakers__content">
-
+      <section class="speakers">
+        <div class="speakers__content">
+          <h2 class="headline speakers__headline">Эксперты</h2>
+          <div class="swiper speakers__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide speakers__slide">
+                <div class="speakers__image-block">
+                  <img src="assets/images/speaker-1.png" alt="Фото 1" class="speakers__image" />
+                </div>
+                <a class="speakers__link" href="#">нажми на меня!</a>
+              </div>
+              <div class="swiper-slide speakers__slide speakers__slide--color">
+                <div class="speakers__image-block">
+                  <img src="assets/images/speaker-1.png" alt="Фото 2" class="speakers__image" />
+                </div>
+                <a class="speakers__link" href="#">нажми на меня!</a>
+              </div>
+              <div class="swiper-slide speakers__slide">
+                <div class="speakers__image-block">
+                  <img src="assets/images/speaker-1.png" alt="Фото 3" class="speakers__image" />
+                </div>
+                <a class="speakers__link" href="#">нажми на меня!</a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="partners__content">
+          <h2 class="headline partners__headline">Партнеры</h2>
+          <div class="swiper partners__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide partners__slide">
+                <img src="assets/images/partner-logo-1.png" alt="Лого 1" class="partners__image" />
+              </div>
+              <div class="swiper-slide partners__slide">
+                <img src="#" alt="Лого 2" class="partners__image" />
+              </div>
+              <div class="swiper-slide partners__slide">
+                <img src="#" alt="Лого 3" class="partners__image" />
+              </div>
+              <div class="swiper-slide partners__slide">
+                <img src="#" alt="Лого 4" class="partners__image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="news">
+        <div class="news__content">
+          <h2 class="headline news__headline">Новости</h2>
+          <div class="swiper news__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide news__slide">
+                <div class="news__image-block">
+                  <img src="assets/images/news-1.png" alt="Фото 1" class="news__image" />
+                </div>
+                <div class="news__info">
+                  <p class="news__title">X-Com в новостях!</p>
+                  <p class="news__text">
+                    Компания «X-Com», ведущий игрок на рынке системной интеграции, объявляет о успешном завершении масштабного проекта для сети гипермаркетов «Сфера». Специалистами компании была
+                    реализована комплексная интеграция CRM- и ERP-систем с новой автоматизированной платформой биллинга. Этот проект — наглядный пример того, как грамотная интеграция разрозненных
+                    систем...
+                  </p>
+                  <a href="#" class="news__link">читать далее</a>
+                </div>
+              </div>
+              <div class="swiper-slide news__slide">
+                <div class="news__image-block">
+                  <img src="assets/images/news-2.png" alt="Фото 1" class="news__image" />
+                </div>
+                <div class="news__info">
+                  <p class="news__title">X-Com в новостях!</p>
+                  <p class="news__text">
+                    Компания «X-Com», ведущий игрок на рынке системной интеграции, объявляет о успешном завершении масштабного проекта для сети гипермаркетов «Сфера». Специалистами компании была
+                    реализована комплексная интеграция CRM- и ERP-систем с новой автоматизированной платформой биллинга. Этот проект — наглядный пример того, как грамотная интеграция разрозненных
+                    систем...
+                  </p>
+                  <a href="#" class="news__link">читать далее</a>
+                </div>
+              </div>
+              <div class="swiper-slide news__slide">
+                <div class="news__image-block">
+                  <img src="assets/images/news-3.png" alt="Фото 1" class="news__image" />
+                </div>
+                <div class="news__info">
+                  <p class="news__title">X-Com в новостях!</p>
+                  <p class="news__text">
+                    Компания «X-Com», ведущий игрок на рынке системной интеграции, объявляет о успешном завершении масштабного проекта для сети гипермаркетов «Сфера». Специалистами компании была
+                    реализована комплексная интеграция CRM- и ERP-систем с новой автоматизированной платформой биллинга. Этот проект — наглядный пример того, как грамотная интеграция разрозненных
+                    систем...
+                  </p>
+                  <a href="#" class="news__link">читать далее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container registration">
+        <div class="container__content registration__content">
+          <h2 class="headline">Регистрация</h2>
+          <div class="registration__forms">
+            <form class="form" id="member-form" action="#">
+              <p class="form__headline">Для участников</p>
+              <div class="form__wrapper">
+                <div class="form__inputs">
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="ФИО *" name="name" value="" id="name" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Должность *" name="job" value="" id="job" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Название организации *" name="company" value="" id="company" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="number" class="form__input" placeholder="ИНН *" name="taxId" value="" id="taxId" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="email" class="form__input" placeholder="E-mail *" name="email" value="" id="email" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="tel" class="form__input" placeholder="Телефон *" name="phone" value="" id="phone" />
+                    <span class="form__required">*</span>
+                  </div>
+
+                  <div class="form__item form__item--checkbox">
+                    <input type="checkbox" id="privacy-policy" name="privacy-policy" class="form__checkbox" checked />
+                    <label for="privacy-policy" class="form__checkbox-label">Согласие на прозвон</label>
+                    <div class="error-message" style="display: none"></div>
+                  </div>
+                </div>
+
+                <button type="submit" class="form__button button">Занять место</button>
+              </div>
+            </form>
+
+            <form class="form" id="startup-form" action="#">
+              <p class="form__headline">Для стартапов</p>
+              <div class="form__wrapper">
+                <div class="form__inputs">
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="ФИО *" name="name" value="" id="name" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Должность *" name="job" value="" id="job" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Название стартапа *" name="company" value="" id="company" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Сайт *" name="site" value="" id="site" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="text" class="form__input" placeholder="Ссылка на презентацию *" name="presentation" value="" id="presentation" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="email" class="form__input" placeholder="E-mail *" name="email" value="" id="email" />
+                    <span class="form__required">*</span>
+                  </div>
+                  <div class="form__item">
+                    <input type="tel" class="form__input" placeholder="Телефон *" name="phone" value="" id="phone" />
+                    <span class="form__required">*</span>
+                  </div>
+
+                  <div class="form__item form__item--checkbox">
+                    <input type="checkbox" id="privacy-policy-startup" name="privacy-policy" class="form__checkbox" checked />
+                    <label for="privacy-policy-startup" class="form__checkbox-label">Согласие на прозвон</label>
+                    <div class="error-message" style="display: none"></div>
+                  </div>
+                </div>
+
+                <button type="submit" class="form__button button">Занять место</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer container" id="contacts">
-        <div class="footer__content container__content">
-            <a href="https://www.xcom.ru/" class="footer__logo">
-                <img class="logo footer__logo-img" src="./assets/images/logo.svg" alt="XCOM" />
-            </a>
+      <div class="footer__content container__content">
+        <a href="https://www.xcom.ru/" class="footer__logo">
+          <img class="logo footer__logo-img" src="./assets/images/logo.svg" alt="XCOM" />
+        </a>
 
-            <div class="footer__links">
-                <div class="footer__item">
-                    <p class="footer__label">О компании</p>
-                    <div class="footer__text">
-                        <a href="#">История</a>
-                        <a href="#">О компании</a>
-                        <a href="#">About us</a>
-                        <a href="#">Вакансии</a>
-                        <a href="#">Акции</a>
-                        <a href="#">Бизнес-акселератор X-Com</a>
-                        <a href="#">Проекты</a>
-                        <a href="#">Пресс-центр</a>
-                        <a href="#">Статьи об импортозамещении</a>
-                    </div>
-                </div>
+        <div class="footer__links">
+          <div class="footer__item">
+            <p class="footer__label">О компании</p>
+            <div class="footer__text">
+              <a href="#">История</a>
+              <a href="#">О компании</a>
+              <a href="#">About us</a>
+              <a href="#">Вакансии</a>
+              <a href="#">Акции</a>
+              <a href="#">Бизнес-акселератор X-Com</a>
+              <a href="#">Проекты</a>
+              <a href="#">Пресс-центр</a>
+              <a href="#">Статьи об импортозамещении</a>
             </div>
-
-            <div class="footer__links">
-                <div class="footer__item">
-                    <p class="footer__label">Системная интеграция</p>
-                    <div class="footer__text">
-                        <a href="#">Монтаж и пусконакладка серверов</a>
-                        <a href="#">Построение СХД и внедрение NAS-массивов под ключ</a>
-                        <a href="#">Внедрение программного обеспечения под ключ</a>
-                        <a href="#">Внедрение и сервис сетевого оборудования</a>
-                        <a href="#">Внедрение офисных IP-ATC</a>
-                        <a href="#">Оснащение и сервис рабочих мест</a>
-                        <a href="#">Внедрение систем корпоративной печати</a>
-                        <a href="#">Построение инженерных инфраструктур</a>
-                        <a href="#">Внедрение и сервис систем безопасности</a>
-                        <a href="#">Расчет, поставка, монтаж и обслуживание кабеленесущих систем</a>
-                        <a href="#">Аутсорсинг информационной безопасности</a>
-                        <a href="#">Мультимедийные решения для корпоративных коммуникаций</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer__links">
-                <div class="footer__item">
-                    <p class="footer__label">Мероприятия</p>
-                    <div class="footer__text">
-                        <p class="footer__sub-label">2024</p>
-                        <a href="#">Вебинар X-Com и Катюша</a>
-                        <a href="#">Вебинар Видеорегистраторы TRASSIR</a>
-                        <a href="#">Бизнес-ужин X-Com совместно с IRBIS, Systeme Electric, IDS</a>
-                        <a href="#">ИТ-конференция X-Com "Energy Day"</a>
-                        <a href="#">Конференция "Здрав IT"</a>
-                        <a href="#">Вебинар "Печать без границ: новый уровень экономии и качества"</a>
-                        <a href="#">Демо-день конкурса "Беспилотники: поможем взлететь Вашему бизнесу"</a>
-
-                        <p class="footer__sub-label">2025</p>
-                        <a href="#">Конференция "Цифровизация науки и образования"</a>
-                        <a href="#">Вебинар "Обзор печатной техники российского производителя"</a>
-                        <a href="#">Конференция "Интеграторы систем безопасности"</a>
-                        <a href="#">Конференция "Pro-AV"</a>
-                        <a href="#">Вебинар "Пилотные проекты российского софта"</a>
-                        <a href="#">Конференция "Системы безопасности"</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer__contacts">
-                <div class="footer__item">
-                    <p class="footer__label">Контакты</p>
-                    <div class="footer__text">
-                        <span>+7 (495) 223-63-39 (Москва)</span>
-                        <span>+7 (812) 740-11-20 (Санкт-Петербург)</span>
-                        <span>Электронная почта: om@xcom.ru</span>
-                    </div>
-                </div>
-                <div class="footer__social">
-                    <div class="footer__icons">
-                        <a href="#"><img src="./assets/images/tg.svg" alt="Telegram" /></a>
-                        <a href="#"><img src="./assets/images/vk.svg" alt="VK" /></a>
-                        <a href="#"><img src="./assets/images/mail.svg" alt="Mail" /></a>
-                    </div>
-                    <a href="#" class="footer__link">Политика конфиденциальности</a>
-                </div>
-            </div>
-
-            <div class="footer__copy">
-                <p class="footer__copy-text">Использование материалов, размещенных на сайте, допускается только с
-                    письменного
-                    разрешения «ООО М-ИНВЕСТ»</p>
-                <p class="footer__copy-text">2024 © «ООО М-ИНВЕСТ». Все права защищены.</p>
-            </div>
+          </div>
         </div>
-    </footer>
-</body>
 
+        <div class="footer__links">
+          <div class="footer__item">
+            <p class="footer__label">Системная интеграция</p>
+            <div class="footer__text">
+              <a href="#">Монтаж и пусконакладка серверов</a>
+              <a href="#">Построение СХД и внедрение NAS-массивов под ключ</a>
+              <a href="#">Внедрение программного обеспечения под ключ</a>
+              <a href="#">Внедрение и сервис сетевого оборудования</a>
+              <a href="#">Внедрение офисных IP-ATC</a>
+              <a href="#">Оснащение и сервис рабочих мест</a>
+              <a href="#">Внедрение систем корпоративной печати</a>
+              <a href="#">Построение инженерных инфраструктур</a>
+              <a href="#">Внедрение и сервис систем безопасности</a>
+              <a href="#">Расчет, поставка, монтаж и обслуживание кабеленесущих систем</a>
+              <a href="#">Аутсорсинг информационной безопасности</a>
+              <a href="#">Мультимедийные решения для корпоративных коммуникаций</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__item">
+            <p class="footer__label">Мероприятия</p>
+            <div class="footer__text">
+              <p class="footer__sub-label">2024</p>
+              <a href="#">Вебинар X-Com и Катюша</a>
+              <a href="#">Вебинар Видеорегистраторы TRASSIR</a>
+              <a href="#">Бизнес-ужин X-Com совместно с IRBIS, Systeme Electric, IDS</a>
+              <a href="#">ИТ-конференция X-Com "Energy Day"</a>
+              <a href="#">Конференция "Здрав IT"</a>
+              <a href="#">Вебинар "Печать без границ: новый уровень экономии и качества"</a>
+              <a href="#">Демо-день конкурса "Беспилотники: поможем взлететь Вашему бизнесу"</a>
+
+              <p class="footer__sub-label">2025</p>
+              <a href="#">Конференция "Цифровизация науки и образования"</a>
+              <a href="#">Вебинар "Обзор печатной техники российского производителя"</a>
+              <a href="#">Конференция "Интеграторы систем безопасности"</a>
+              <a href="#">Конференция "Pro-AV"</a>
+              <a href="#">Вебинар "Пилотные проекты российского софта"</a>
+              <a href="#">Конференция "Системы безопасности"</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__item">
+            <p class="footer__label">Контакты</p>
+            <div class="footer__text">
+              <span>+7 (495) 223-63-39 (Москва)</span>
+              <span>+7 (812) 740-11-20 (Санкт-Петербург)</span>
+              <span>Электронная почта: om@xcom.ru</span>
+            </div>
+          </div>
+          <div class="footer__social">
+            <div class="footer__icons">
+              <a href="#"><img src="./assets/images/tg.svg" alt="Telegram" /></a>
+              <a href="#"><img src="./assets/images/vk.svg" alt="VK" /></a>
+              <a href="#"><img src="./assets/images/mail.svg" alt="Mail" /></a>
+            </div>
+            <a href="#" class="footer__link">Политика конфиденциальности</a>
+          </div>
+        </div>
+
+        <div class="footer__copy">
+          <p class="footer__copy-text">Использование материалов, размещенных на сайте, допускается только с письменного разрешения «ООО М-ИНВЕСТ»</p>
+          <p class="footer__copy-text">2024 © «ООО М-ИНВЕСТ». Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

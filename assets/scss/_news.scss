@@ -1,0 +1,82 @@
+.news {
+    &__headline {
+        padding: 0 var(--size-sm);
+    }
+    &__slider {
+        overflow: visible !important;
+        background-color: var(--color-bright);
+        padding: var(--size-sm);
+    }
+
+    &__slide {
+        min-height: 50vh !important;
+        max-height: 100vh !important;
+        height: auto;
+        border-radius: var(--size-sm);
+        // padding: var(--size-xxxs);
+        border: calc(var(--size-xxxs) * 0.5) solid var(--color-bright);
+
+        display: flex !important;
+        flex-direction: column;
+
+        &--color {
+            background-color: var(--color-bright);
+            color: var(--color-main);
+            .speakers__image-block {
+                background-color: var(--color-main);
+            }
+            .speakers__link {
+                color: var(--color-main);
+            }
+        }
+    }
+
+    &__image-block {
+        height: 35vh;
+        border-radius: var(--size-xxs);
+        background-color: var(--color-bright);
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__link {
+        // display: flex;
+        /* Убираем flex-grow и flex */
+        align-items: end;
+        // font-family: Second;
+        font-size: var(--size-xxs);
+        margin-top: auto; /* Это прижмет ссылку к низу */
+        color: var(--color-dark);
+        text-decoration: underline;
+        transition: all .3s ease-in-out;
+        &:hover {
+            color: var(--color-main);
+        }
+    }
+    &__info {
+        margin-top: var(--size-xxxs);
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-xxxs);
+    }
+    &__title {
+        color: var(--color-main);
+        font-weight: 700;
+        font-size: var(--size-sm);
+    }
+
+    &__text {
+        color: var(--color-dark);
+
+        font-size: var(--size-xs);
+        display: -webkit-box;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

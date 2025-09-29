@@ -1,0 +1,10 @@
+.registration {
+    &__forms {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+        @include md {
+            flex-direction: row;
+        }
+    }
+}
