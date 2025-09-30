@@ -1,8 +1,8 @@
 function initParallax(config) {
     const {
         n = 10,
-        minSize = '3vw',
-        maxSize = '6vw',
+        minSize = '3',
+        maxSize = '6',
         url = '',
         minSpeed = 1.2,
         maxSpeed = 1.4,
@@ -59,7 +59,7 @@ function initParallax(config) {
             parseFloat(minSize),
             parseFloat(maxSize)
         );
-        const sizeUnit = minSize.replace(/[0-9.]/g, '');
+        // const sizeUnit = minSize.replace(/[0-9.]/g, '');
 
         // Случайная скорость
         const speed = getRandom(minSpeed, maxSpeed);
@@ -73,8 +73,8 @@ function initParallax(config) {
 
         element.style.cssText = `
             position: absolute;
-            width: ${size}${sizeUnit};
-            height: ${size}${sizeUnit};
+            width: calc(${size}vw + ${size}vh) ;
+            height: calc(${size}vw + ${size}vh) ;
             left: ${left}%;
             top: ${top}%;
             background-image: url('${url}');
@@ -82,8 +82,30 @@ function initParallax(config) {
             background-repeat: no-repeat;
             background-position: center;
             will-change: transform;
-            transition: transform 0.1s ease-out;
+            transition: 0.3s ease-out;
+            opacity: 1;
         `;
+
+        element.style.pointerEvents = 'auto'; // Allow this element to receive mouse/touch events
+
+        // Mouse and touch event handlers
+        element.addEventListener('mouseover', () => {
+            element.style.opacity = '0';
+        });
+
+        // element.addEventListener('mouseout', () => {
+        //     element.style.opacity = '1';
+        // });
+
+        // Touch events for mobile devices
+        element.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent default touch behavior
+            element.style.opacity = '0';
+        });
+
+        // element.addEventListener('touchend', () => {
+        //     element.style.opacity = '1';
+        // });
 
         parallaxContainer.appendChild(element);
 
@@ -105,7 +127,7 @@ function initParallax(config) {
     function handleMouseMove(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
+
         // Обновляем центр при изменении размера окна
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
@@ -171,7 +193,7 @@ function initParallax(config) {
     function handleResize() {
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
-        
+
         parallaxElements.forEach(item => {
             item.isVisible = isElementInViewport(item.element);
         });
@@ -202,10 +224,10 @@ function initParallax(config) {
 // Использование
 const parallax = initParallax({
     n: 25,
-    minSize: '3vw',
-    maxSize: '6vw',
+    minSize: '2',
+    maxSize: '6',
     url: '/assets/images/parallax-item.png',
-    minSpeed: 1.1,
+    minSpeed: .7,
     maxSpeed: 1.5,
     mouseSensitivity: 1 // Можно регулировать от 0 (нет эффекта) до 1 (максимальный эффект)
 });
