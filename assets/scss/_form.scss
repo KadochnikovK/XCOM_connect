@@ -13,6 +13,11 @@
         font-family: Second;
     }
 
+    &__button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -55,7 +60,7 @@
 
         &--checkbox {
             display: flex;
-            margin-top: var(--size-sm);
+            margin-bottom: var(--size-sm);
             position: relative;
             padding-left: var(--size-lg);
         }
@@ -86,8 +91,8 @@
         position: absolute;
         right: var(--size-md);
         top: var(--size-sm);
-        font-size: var(--size-xs);
-        color: var(--color-red);
+        font-size: var(--size-sm);
+        color: var(--color-second);
         font-family: "Second", sans-serif;
     }
 
@@ -96,7 +101,7 @@
         opacity: 0;
         left: 0;
 
-        & + label {
+        &+label {
             position: relative;
             cursor: pointer;
             padding: 0;
@@ -108,7 +113,7 @@
             min-height: var(--size-sm);
         }
 
-        & + label:before {
+        &+label:before {
             content: "";
             position: absolute;
             left: calc(-1 * var(--size-lg));
@@ -122,19 +127,19 @@
             box-sizing: border-box;
         }
 
-        &:checked + label:after {
+        &:checked+label:after {
             content: "";
             position: absolute;
-            left: calc(-1 * var(--size-md));
+            left: calc(-1 * var(--size-lg) + var(--size-xxs) * .35);
             top: 50%;
             transform: translateY(-50%);
-            width: var(--size-xs);
-            height: var(--size-xs);
-            background: var(--color-main);
+            width: var(--size-xxs);
+            height: var(--size-xxs);
+            background: var(--color-dark);
             border-radius: 10pc;
         }
 
-        &:focus + label:before {
+        &:focus+label:before {
             box-shadow: 0 0 0 2px var(--color-main);
         }
     }

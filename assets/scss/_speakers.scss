@@ -1,5 +1,6 @@
 .speakers {
     padding: var(--size-sm);
+
     &__slider {
         overflow: visible !important;
     }
@@ -12,13 +13,44 @@
         text-align: center;
         display: flex !important;
         flex-direction: column;
+        position: relative;
+        transition: all .3s ease-in-out;
+
+        &--active {
+            background-color: white !important;
+            color: var(--color-main);
+
+            .speakers__image-block {
+                visibility: hidden;
+            }
+
+            .social-link {
+                color: var(--color-main);
+                text-decoration: none;
+                font-size: var(--size-sm);
+                font-weight: 700;
+                display: block;
+                margin: 5px 0;
+                transition: opacity .3s ease-in-out;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+
+            .speakers__link {
+                color: var(--color-main);
+            }
+        }
 
         &--color {
             background-color: var(--color-bright);
             color: var(--color-main);
+
             .speakers__image-block {
                 background-color: var(--color-main);
             }
+
             .speakers__link {
                 color: var(--color-main);
             }
@@ -30,25 +62,33 @@
         border-radius: var(--size-xxs);
         background-color: var(--color-bright);
         margin-bottom: auto;
+        overflow: hidden;
     }
 
     &__image {
         height: 100%;
-        width: 100%;
+        // width: 100%;
         object-fit: contain;
     }
 
     &__link {
-        // display: flex;
-        /* Убираем flex-grow и flex */
         align-items: end;
         font-family: Second;
         font-size: var(--size-xxxs);
-        margin-top: auto; /* Это прижмет ссылку к низу */
+        margin-top: auto;
         transition: all .3s ease-in-out;
 
         &:hover {
             opacity: .7;
         }
+    }
+
+    &__social-links {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
     }
 }
