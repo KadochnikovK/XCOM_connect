@@ -165,13 +165,10 @@ function initParallax(config) {
                 movement = -scrollDelta;
             }
 
-          
             item.currentY += movement;
 
-            
             item.mouseOffsetX = mouseDeltaX * 20 * item.mouseMultiplier; 
             item.mouseOffsetY = mouseDeltaY * 20 * item.mouseMultiplier; 
-
           
             item.element.style.transform = `
                 translateY(${item.currentY}px)

@@ -745,7 +745,6 @@ li {
   top: 100%;
   color: var(--color-red);
   font-size: var(--size-xxs);
-  margin-top: var(--size-xxs);
 }
 
 .footer {
