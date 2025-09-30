@@ -6,10 +6,10 @@ function initParallax(config) {
         url = '',
         minSpeed = 1.2,
         maxSpeed = 1.4,
-        mouseSensitivity = 0.5 // Новая настройка: чувствительность к движению мыши
+        mouseSensitivity = 0.5 
     } = config;
 
-    // Создаем контейнер для параллакс элементов
+
     const parallaxContainer = document.createElement('div');
     parallaxContainer.className = 'parallax-container';
     parallaxContainer.style.cssText = `
@@ -24,21 +24,21 @@ function initParallax(config) {
     `;
     document.body.appendChild(parallaxContainer);
 
-    // Массив для хранения элементов и их данных
+  
     const parallaxElements = [];
 
-    // Переменные для отслеживания положения мыши
+ 
     let mouseX = 0;
     let mouseY = 0;
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
 
-    // Функция для генерации случайного числа в диапазоне
+ 
     function getRandom(min, max) {
         return Math.random() * (max - min) + min;
     }
 
-    // Функция для проверки видимости элемента
+  
     function isElementInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
@@ -49,26 +49,26 @@ function initParallax(config) {
         );
     }
 
-    // Создаем параллакс элементы
+   
     for (let i = 0; i < n; i++) {
         const element = document.createElement('div');
         element.className = 'parallax-element';
 
-        // Случайный размер
+   
         const size = getRandom(
             parseFloat(minSize),
             parseFloat(maxSize)
         );
         // const sizeUnit = minSize.replace(/[0-9.]/g, '');
 
-        // Случайная скорость
+     
         const speed = getRandom(minSpeed, maxSpeed);
 
-        // Случайная позиция
+      
         const left = getRandom(0, 100);
-        const top = getRandom(-50, 150); // Разрешаем элементы за пределами экрана
+        const top = getRandom(-50, 150); 
 
-        // Случайный множитель для эффекта мыши (элементы с большей скоростью скролла будут сильнее реагировать на мышь)
+
         const mouseMultiplier = getRandom(0.3, 1.0) * mouseSensitivity;
 
         element.style.cssText = `
@@ -86,9 +86,9 @@ function initParallax(config) {
             opacity: 1;
         `;
 
-        element.style.pointerEvents = 'auto'; // Allow this element to receive mouse/touch events
+        element.style.pointerEvents = 'auto';
 
-        // Mouse and touch event handlers
+
         element.addEventListener('mouseover', () => {
             element.style.opacity = '0';
         });
@@ -97,9 +97,9 @@ function initParallax(config) {
         //     element.style.opacity = '1';
         // });
 
-        // Touch events for mobile devices
+
         element.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Prevent default touch behavior
+            e.preventDefault(); 
             element.style.opacity = '0';
         });
 
@@ -109,7 +109,7 @@ function initParallax(config) {
 
         parallaxContainer.appendChild(element);
 
-        // Сохраняем данные элемента
+        
         parallaxElements.push({
             element,
             speed,
@@ -123,17 +123,17 @@ function initParallax(config) {
         });
     }
 
-    // Обработчик движения мыши
+    
     function handleMouseMove(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        // Обновляем центр при изменении размера окна
+        
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
     }
 
-    // Обработчик скролла
+  
     let lastScrollY = window.scrollY;
     let rafId = null;
 
@@ -141,38 +141,38 @@ function initParallax(config) {
         const currentScrollY = window.scrollY;
         const scrollDelta = currentScrollY - lastScrollY;
 
-        // Вычисляем смещение мыши от центра экрана
-        const mouseDeltaX = (mouseX - centerX) / centerX; // Нормализованное значение от -1 до 1
-        const mouseDeltaY = (mouseY - centerY) / centerY; // Нормализованное значение от -1 до 1
+       
+        const mouseDeltaX = (mouseX - centerX) / centerX; 
+        const mouseDeltaY = (mouseY - centerY) / centerY; 
 
         parallaxElements.forEach(item => {
             const isVisible = isElementInViewport(item.element);
 
-            // Если видимость изменилась
+         
             if (isVisible !== item.isVisible) {
                 item.isVisible = isVisible;
-                // При смене видимости сбрасываем lastScrollY чтобы избежать скачка
+                
                 item.lastScrollY = currentScrollY;
             }
 
             let movement = 0;
 
             if (item.isVisible) {
-                // Когда элемент виден - применяем ускоренную скорость (движение вверх)
+                
                 movement = -scrollDelta * item.speed;
             } else {
-                // Когда не виден - нормальная скорость скролла (движение вверх)
+             
                 movement = -scrollDelta;
             }
 
-            // Обновляем позицию от скролла
+          
             item.currentY += movement;
 
-            // Вычисляем смещение от мыши (умножаем на множитель элемента)
-            item.mouseOffsetX = mouseDeltaX * 20 * item.mouseMultiplier; // Максимальное смещение 20px
-            item.mouseOffsetY = mouseDeltaY * 20 * item.mouseMultiplier; // Максимальное смещение 20px
+            
+            item.mouseOffsetX = mouseDeltaX * 20 * item.mouseMultiplier; 
+            item.mouseOffsetY = mouseDeltaY * 20 * item.mouseMultiplier; 
 
-            // Применяем оба преобразования: скролл и мышь
+          
             item.element.style.transform = `
                 translateY(${item.currentY}px)
                 translateX(${item.mouseOffsetX}px)
@@ -186,10 +186,10 @@ function initParallax(config) {
         rafId = requestAnimationFrame(updateParallax);
     }
 
-    // Запускаем анимацию
+   
     updateParallax();
 
-    // Обработчики событий
+ 
     function handleResize() {
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
@@ -202,7 +202,7 @@ function initParallax(config) {
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Функция для очистки
+
     function destroy() {
         if (rafId) {
             cancelAnimationFrame(rafId);
@@ -214,14 +214,14 @@ function initParallax(config) {
         }
     }
 
-    // Возвращаем методы для управления
+  
     return {
         destroy,
         elements: parallaxElements
     };
 }
 
-// Использование
+
 const parallax = initParallax({
     n: 25,
     minSize: '2',
@@ -229,5 +229,5 @@ const parallax = initParallax({
     url: '/assets/images/parallax-item.png',
     minSpeed: .7,
     maxSpeed: 1.5,
-    mouseSensitivity: 1 // Можно регулировать от 0 (нет эффекта) до 1 (максимальный эффект)
+    mouseSensitivity: 1 
 });
