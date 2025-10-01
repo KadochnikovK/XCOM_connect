@@ -223,7 +223,7 @@ const parallax = initParallax({
     n: 25,
     minSize: '2',
     maxSize: '6',
-    url: '/assets/images/parallax-item.png',
+    url: 'assets/images/parallax-item.png',
     minSpeed: .7,
     maxSpeed: 1.5,
     mouseSensitivity: 1 
