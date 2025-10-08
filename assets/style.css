@@ -395,7 +395,7 @@ li {
   border-radius: 10px 0 0 10px;
   height: var(--size-xl);
   left: 0;
-  right: 53%;
+  right: 0%;
   background-color: var(--color-bright);
   bottom: 7.5px;
 }
@@ -403,6 +403,10 @@ li {
   .advantages__number::before {
     height: 4vw;
   }
+}
+.advantages__number svg {
+  position: relative;
+  z-index: 2;
 }
 .advantages__list {
   display: grid;
@@ -413,6 +417,9 @@ li {
 @media (min-width: 1024px) {
   .advantages__list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .advantages__list--2col {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .advantages__item {
@@ -427,6 +434,39 @@ li {
   color: var(--color-main);
 }
 
+.advantages__slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.advantages__slider .swiper-wrapper {
+  height: 100%;
+}
+
+.advantages__slider .swiper-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+.advantages__slider .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .advantages__slider {
+    height: 80vh;
+  }
+}
 .speakers {
   padding: var(--size-sm);
 }
@@ -944,4 +984,4 @@ li {
   width: -moz-max-content;
   width: max-content;
   border: 2px solid var(--color-dark);
-}/*# sourceMappingURL=style.css.map */
+}
