@@ -55,7 +55,7 @@
         // padding-bottom: 6.5vh;
 
         &::before {
-            content: "Практические решения для вашего бизнеса";
+            content: var(--description-content);
             padding-left: var(--size-sm);
             display: flex;
             align-items: center;

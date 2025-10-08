@@ -362,7 +362,7 @@ li {
   position: relative;
 }
 .advantages__description::before {
-  content: "Практические решения для вашего бизнеса";
+  content: var(--description-content);
   padding-left: var(--size-sm);
   display: flex;
   align-items: center;
