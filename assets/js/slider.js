@@ -179,33 +179,27 @@ document.addEventListener("DOMContentLoaded", function () {
     centeredSlides: true,
     loop: true,
 
-
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
     },
 
-    
     simulateTouch: true,
     grabCursor: true,
     touchRatio: 1,
     touchAngle: 45,
-    allowTouchMove: true, 
-
+    allowTouchMove: true,
 
     effect: "slide",
     speed: 800,
-    threshold: 5, 
-
+    threshold: 5,
 
     longSwipes: true,
     longSwipesRatio: 0.5,
     longSwipesMs: 300,
 
-
     shortSwipes: true,
     followFinger: true,
-
 
     preventInteractionOnTransition: false,
     resistance: true,
@@ -213,14 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     on: {
       init: function () {
-     
         this.addLineClickHandlers();
       },
       slideChange: function () {
         console.log("Текущий слайд:", this.activeIndex);
       },
     },
-
 
     breakpoints: {
       320: {
@@ -239,9 +231,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("click", function (e) {
+    console.log(e.target);
     if (e.target.classList.contains("advantages__line")) {
       console.log("Следующий слайд");
       advantagesSwiper.slideNext();
     }
   });
+
+  
 });
