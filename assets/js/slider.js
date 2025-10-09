@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("1: перед speakersSwiper");
   const speakersSwiper = new Swiper(".speakers__slider", {
     slidesPerView: "auto",
     spaceBetween: 20,
@@ -58,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-
+  console.log("2: перед partnersSwiper");
   const partnersSwiper = new Swiper(".partners__slider", {
     slidesPerView: "auto",
     spaceBetween: 20,
@@ -118,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+  console.log("3: перед newsSwiper");
   const newsSwiper = new Swiper(".news__slider", {
     slidesPerView: "auto",
     spaceBetween: 20,
@@ -172,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-
+  console.log("4: перед advantagesSwiper");
   const advantagesSwiper = new Swiper(".advantages__slider", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -207,10 +209,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     on: {
       init: function () {
-        this.addLineClickHandlers();
+        console.log("Swiper инициализирован");
       },
       slideChange: function () {
-        console.log("Текущий слайд:", this.activeIndex);
+        console.log("Текущий слайд:", this.realIndex);
       },
     },
 
@@ -229,11 +231,17 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-});
-document.addEventListener("click", function (e) {
-  console.log(e.target);
-  if (e.target.classList.contains("advantages__line")) {
-    console.log("Следующий слайд");
-    advantagesSwiper.slideNext();
-  }
+  console.log("5: после advantagesSwiper");
+  console.log("Слайдер создан, создаем слушатель");
+
+  // Обработчик клика по врапперу
+  document.addEventListener("click", function (e) {
+    // Проверяем, кликнули ли на элемент с классом advantages__wrapper или его дочерний элемент
+    if (e.target.closest(".advantages__wrapper")) {
+      console.log("Клик по врапперу, переключаем слайд");
+      advantagesSwiper.slideNext();
+    }
+  });
+
+  console.log("Слушатель создан");
 });
