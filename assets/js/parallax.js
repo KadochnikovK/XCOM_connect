@@ -18,7 +18,7 @@ function initParallax(config) {
         left: 0;
         width: 100%;
         height: 300%;
-   
+        pointer-events: none;
         z-index: 1000;
         overflow: hidden;
     `;

@@ -97,6 +97,11 @@
   word-break: break-word;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background: url(images/background-main.png);
   background-size: 100% 100%;
@@ -105,6 +110,8 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {

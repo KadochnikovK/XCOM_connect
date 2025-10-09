@@ -229,14 +229,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-
-  document.addEventListener("click", function (e) {
-    console.log(e.target);
-    if (e.target.classList.contains("advantages__line")) {
-      console.log("Следующий слайд");
-      advantagesSwiper.slideNext();
-    }
-  });
-
-  
+});
+document.addEventListener("click", function (e) {
+  console.log(e.target);
+  if (e.target.classList.contains("advantages__line")) {
+    console.log("Следующий слайд");
+    advantagesSwiper.slideNext();
+  }
 });
