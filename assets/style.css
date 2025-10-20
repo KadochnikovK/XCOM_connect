@@ -495,6 +495,9 @@ li {
   background-color: white !important;
   color: var(--color-main);
 }
+.speakers__slide--active .speakers__name {
+  display: none;
+}
 .speakers__slide--active .speakers__image-block {
   visibility: hidden;
 }
@@ -520,6 +523,7 @@ li {
 .speakers__slide--color .speakers__image-block {
   background-color: var(--color-main);
 }
+.speakers__slide--color .speakers__name,
 .speakers__slide--color .speakers__link {
   color: var(--color-main);
 }
@@ -527,13 +531,17 @@ li {
   height: 60%;
   border-radius: var(--size-xxs);
   background-color: var(--color-bright);
-  margin-bottom: auto;
   overflow: hidden;
 }
 .speakers__image {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.speakers__name {
+  font-size: var(--size-md);
+  font-weight: 600;
+  margin-top: var(--size-xxxs);
 }
 .speakers__link {
   align-items: end;
