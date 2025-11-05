@@ -64,11 +64,11 @@
   font-display: swap;
 }
 :root {
-  --color-main: #0142c4;
+  --color-main: #0770F0;
   --color-second: #01256B;
   --color-grey: #e4e4e4;
   --color-bright: #fff;
-  --color-dark: #000;
+  --color-dark: #3A517F;
   --color-red: #b41313;
   --size-xxxs: calc((1vw + 1vh) * 0.4);
   --size-xxs: calc((1vw + 1vh) * 0.6);
@@ -474,6 +474,123 @@ li {
     height: 80vh;
   }
 }
+.bullets__list {
+  background: url(images/background-02.png);
+  background-size: cover;
+  border-radius: var(--size-sm);
+  padding: var(--size-xl) var(--size-sm);
+  width: 100%;
+}
+.bullets__item {
+  position: relative;
+  width: 100%;
+}
+.bullets__background-fillter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Texture Size 1.7 + Radius 29 через SVG noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.17' numOctaves='3' stitchTiles='stitch'/%3E%3CfeGaussianBlur stdDeviation='0.29'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E");
+  /* Background Blur Uniform 1 */
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.schedule {
+  padding: var(--size-sm);
+}
+.schedule__head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--size-md);
+}
+@media (min-width: 1024px) {
+  .schedule__head {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.schedule__link {
+  display: flex;
+  gap: var(--size-xxxs);
+  font-size: var(--size-sm);
+}
+.schedule__headline {
+  margin: 0;
+}
+.schedule__content {
+  gap: var(--size-xs);
+}
+.schedule__paragraph {
+  font-size: var(--size-xs);
+  margin-top: var(--size-xxxs);
+}
+.schedule__slider {
+  overflow: visible !important;
+}
+.schedule__slide {
+  background-color: var(--color-bright);
+  border-radius: var(--size-sm);
+  flex-direction: column;
+  display: flex !important;
+  padding: var(--size-xs);
+  align-items: center;
+  gap: var(--size-xs);
+}
+.schedule__events {
+  background-color: var(--color-bright);
+  border-radius: var(--size-sm);
+  flex-direction: column;
+  display: flex !important;
+  padding: var(--size-xs);
+  margin-top: var(--size-sm);
+}
+@media (min-width: 1224px) {
+  .schedule__events {
+    gap: var(--size-xs);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.schedule__name {
+  color: var(--color-main);
+  font-size: var(--size-sm);
+  font-weight: 700;
+}
+.schedule__image {
+  width: 50%;
+  height: auto;
+}
+.schedule__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.schedule__item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--size-xs);
+}
+.schedule__item * {
+  font-size: var(--size-xs);
+}
+.schedule__item span:nth-child(1) {
+  color: var(--color-main);
+}
+.schedule__item span:nth-child(2) {
+  color: var(--color-dark);
+}
+.schedule__item--big * {
+  font-weight: 700;
+  font-size: var(--size-sm);
+}
+
 .speakers {
   padding: var(--size-sm);
 }

@@ -1,0 +1,103 @@
+.schedule {
+    padding: var(--size-sm);
+    &__head {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--size-md);
+
+        @include md {
+            flex-direction: row;
+            align-items: end;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    &__link {
+        display: flex;
+        gap: var(--size-xxxs);
+        font-size: var(--size-sm);
+    }
+
+    &__headline {
+        margin: 0;
+    }
+    &__content {
+        gap: var(--size-xs);
+    }
+
+    &__paragraph {
+        font-size: var(--size-xs);
+        margin-top: var(--size-xxxs);
+    }
+
+    &__slider {
+        overflow: visible !important;
+    }
+
+    &__slide {
+        background-color: var(--color-bright);
+        border-radius: var(--size-sm);
+        flex-direction: column;
+        display: flex !important;
+        padding: var(--size-xs);
+        align-items: center;
+        gap: var(--size-xs);
+    }
+
+    &__events {
+        background-color: var(--color-bright);
+        border-radius: var(--size-sm);
+        flex-direction: column;
+        display: flex !important;
+        padding: var(--size-xs);
+        margin-top: var(--size-sm);
+
+        @include lg {
+            gap: var(--size-xs);
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__name {
+        color: var(--color-main);
+        font-size: var(--size-sm);
+        font-weight: 700;
+    }
+
+    &__image {
+        width: 50%;
+        height: auto;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--size-xs);
+
+        * {
+            font-size: var(--size-xs);
+        }
+
+        span:nth-child(1) {
+            color: var(--color-main);
+        }
+
+        span:nth-child(2) {
+            color: var(--color-dark);
+        }
+        &--big {
+            * {
+                font-weight: 700;
+                font-size: var(--size-sm);
+            }
+        }
+    }
+}
