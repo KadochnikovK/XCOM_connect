@@ -13,6 +13,10 @@
         }
     }
 
+    &__icon {
+width: var(--size-sm)
+    }
+
     &__link {
         display: flex;
         gap: var(--size-xxxs);
@@ -80,6 +84,7 @@
     &__item {
         display: flex;
         justify-content: space-between;
+       
         gap: var(--size-xs);
 
         * {

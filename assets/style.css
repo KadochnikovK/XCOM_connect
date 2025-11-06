@@ -478,26 +478,52 @@ li {
   background: url(images/background-02.png);
   background-size: cover;
   border-radius: var(--size-sm);
-  padding: var(--size-xl) var(--size-sm);
   width: 100%;
+  gap: var(--size-sm);
+  display: grid;
+}
+@media (min-width: 1024px) {
+  .bullets__list {
+    padding: var(--size-xxl) var(--size-sm);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1440px) {
+  .bullets__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.bullets__number {
+  font-size: var(--size-xxl);
+  margin-left: auto;
+  color: var(--color-bright);
+  line-height: 1;
+  font-weight: 700;
 }
 .bullets__item {
   position: relative;
+  border: 4px solid var(--color-bright);
   width: 100%;
+  overflow: hidden;
+  border-radius: var(--size-sm);
+  padding: var(--size-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-sm);
+}
+.bullets__text {
+  font-size: var(--size-sm);
+  z-index: 3;
+  position: relative;
+  font-weight: 700;
 }
 .bullets__background-fillter {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Texture Size 1.7 + Radius 29 через SVG noise */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.17' numOctaves='3' stitchTiles='stitch'/%3E%3CfeGaussianBlur stdDeviation='0.29'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E");
-  /* Background Blur Uniform 1 */
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
-  mix-blend-mode: soft-light;
-  pointer-events: none;
+  inset: -100%;
+  background-color: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .schedule {
@@ -515,6 +541,9 @@ li {
     justify-content: space-between;
     width: 100%;
   }
+}
+.schedule__icon {
+  width: var(--size-sm);
 }
 .schedule__link {
   display: flex;
@@ -1116,4 +1145,4 @@ li {
   width: -moz-max-content;
   width: max-content;
   border: 2px solid var(--color-dark);
-}
+}/*# sourceMappingURL=style.css.map */
