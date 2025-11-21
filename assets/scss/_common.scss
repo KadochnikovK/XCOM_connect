@@ -40,7 +40,7 @@ li {
 }
 
 .container {
-    margin: var(--size-sm);
+    padding: var(--size-sm);
 }
 
 .headline {
@@ -59,10 +59,10 @@ li {
 
 .divider {
     display: inline-block;
-    width: var(--size-xxxs);
-    height: var(--size-xxxs);
+    width: var(--size-xxs);
+    height: var(--size-xxs);
     border-radius: 10pc;
-    background-color: var(--color-bright);
+    background-color: var(--color-main);
 }
 
 .unite {
@@ -97,4 +97,8 @@ li {
     -webkit-text-stroke: 2px white;
     text-stroke: 2px white;
     color: rgba(0, 0, 0, 0) !important;
+}
+
+.text-color-main {
+    color: var(--color-main) !important;
 }
