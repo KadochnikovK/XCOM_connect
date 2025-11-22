@@ -3,4 +3,87 @@
         font-size: var(--size-md);
         text-align: center;
     }
+
+    &__list {
+        display: flex;
+        gap: var(--size-lg);
+        flex-direction: column;
+
+        @include md {
+            gap: 0;
+        }
+    }
+
+    &__item {
+        position: relative;
+        border-radius: 10pc;
+        background-color: #0A2043;
+        padding: var(--size-md) var(--size-xl);
+
+        &--right {
+            margin-left: auto;
+        }
+
+        @include md {
+            width: 52%;
+        }
+    }
+
+    &__name {
+        color: var(--color-bright);
+        font-weight: 700;
+        font-size: var(--size-sm);
+    }
+
+    &__description {
+        color: var(--color-bright);
+        font-size: var(--size-sm);
+        font-weight: 200;
+    }
+
+    &__description * {
+        color: var(--color-bright);
+        font-size: var(--size-sm);
+        font-weight: 200;
+    }
+
+    ul li::before {
+        content: "• ";
+    }
+
+    &__connector {
+        position: absolute;
+        top: 100%;
+        height: var(--size-xl);
+        width: var(--size-xl);
+        right: var(--size-xl);
+
+        transform: translateY(-5%) scale(1.1);
+
+        &--left {
+            left: var(--size-xl);
+            right: auto;
+        }
+
+        @include md {
+            transform: rotate(-40deg) translate(-50%, -50%);
+            left: 100%;
+            top: 80%;
+            height: 110px;
+            width: 100px;
+
+            &--left {
+                transform: rotate(40deg) translate(50%, -50%);
+                left: auto;
+                right: 100%;
+                top: 80%;
+                height: 110px;
+                width: 100px;
+            }
+        }
+
+
+
+    }
+
 }

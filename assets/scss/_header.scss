@@ -1,5 +1,21 @@
 .header {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+
     &__content {
         display: flex;
+        background-color: #222;
+        padding: var(--size-sm);
+        border-radius: 10pc;
+
+    }
+
+    &__links {
+        margin-left: auto;
+        display: flex;
+        gap: var(--size-sm);
+        font-size: var(--size-xxs);
+        align-items: center;
     }
 }

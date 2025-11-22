@@ -39,11 +39,17 @@
             background-size: cover;
             background-repeat: no-repeat;
             justify-content: flex-start;
+            border: 1px solid #000;
         }
         @include md {
-             height: 80vh;
+             height: 70vh;
         }
     }
+
+    /* Frame 2569 */
+
+
+
 
     &__bg-elements {
         position: absolute;
@@ -100,6 +106,7 @@
         font-size: var(--size-xs);
         text-align: center;
         color: #000;
+         border: 1px solid #fff;
 
         &--variant {
             background-color: rgba(1, 66, 196, 0.2);

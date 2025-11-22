@@ -1,8 +1,24 @@
 .tagline {
     position: relative;
+    padding-top: var(--size-xxl);
+    padding-bottom: var(--size-xxl);
+
+    &--bg {
+        background-color: #222;
+    }
 
     &__headline {
         margin: 0;
+        font-size: 4.8vw;
+        text-align: center;
+
+        @include sm {
+            font-size: 5vw;
+        }
+
+        @include md {
+            font-size: 5.2vw;
+        }
     }
 
     &__background {
@@ -38,6 +54,10 @@
 
         &--small {
             font-size: var(--size-xs);
+        }
+
+        &--large {
+            font-size: var(--size-md);
         }
 
         &--right {
