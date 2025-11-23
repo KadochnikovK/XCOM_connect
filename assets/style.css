@@ -1295,6 +1295,11 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 1024px) {
+  .form__button--left {
+    margin-left: 0;
+  }
+}
 .form__wrapper {
   display: flex;
   flex-direction: column;

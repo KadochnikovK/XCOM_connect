@@ -16,6 +16,13 @@
     &__button {
         margin-left: auto;
         margin-right: auto;
+
+        @include md {
+            &--left {
+                margin-left: 0;
+            }
+
+        }
     }
 
     &__wrapper {
