@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initForm(formId) {
         const form = document.getElementById(formId);
-        if (!form) return; // Если формы нет на странице, выходим
+        if (!form) return; 
 
         const formItems = form.querySelectorAll(".form__item");
         const privacyCheckbox = form.querySelector('input[name="privacy-policy"]');
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Проверяем чекбокс приватности только если он есть в форме
+           
             if (privacyCheckbox && !privacyCheckbox.checked) {
                 addError(privacyCheckbox, "Необходимо ваше согласие");
                 isValid = false;
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Хорошо"
                 );
 
-                // Очистка формы после успешной отправки
+                
                 form.reset();
             }
         });
@@ -210,7 +210,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return baseData;
         }
 
-        // Добавляем обработчик для чекбокса приватности только если он есть
         if (privacyCheckbox) {
             privacyCheckbox.addEventListener("change", function () {
                 if (this.checked) {
@@ -266,7 +265,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         }
 
-        // Удаляем старые обработчики и добавляем новые
         const newModalButton = modalButton.cloneNode(true);
         modalButton.parentNode.replaceChild(newModalButton, modalButton);
 

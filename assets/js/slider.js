@@ -11,41 +11,41 @@ document.addEventListener("DOMContentLoaded", function () {
       height: 300,
 
       autoplay: {
-        delay: 3000, // Увеличил задержку с 1000 до 3000 мс
+        delay: 3000, 
         disableOnInteraction: false,
       },
 
       effect: 'slide',
       speed: 600,
 
-      // Настройки для touch-управления
+      
       simulateTouch: true,
       grabCursor: true,
       touchRatio: 1,
       touchAngle: 45,
-      allowTouchMove: true, // Добавил разрешение на перемещение
+      allowTouchMove: true,
 
-      // Настройки сопротивления
+     
       resistance: true,
       resistanceRatio: 0.6,
 
-      // Убрал отключение слайдера на desktop - теперь работает на всех разрешениях
+     
       breakpoints: {
         320: {
           enabled: true,
           slidesPerView: 1,
         },
         768: {
-          enabled: true, // Теперь включен на десктопе
+          enabled: true, 
           slidesPerView: 1,
         },
         1024: {
-          enabled: true, // Теперь включен на десктопе
+          enabled: true, 
           slidesPerView: 1,
         }
       },
 
-      // Добавил freeMode для перетаскивания мышью как в других слайдерах
+   
       freeMode: {
         enabled: true,
         momentum: true,
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         momentumBounce: true,
         momentumBounceRatio: 1,
         momentumVelocityRatio: 2,
-        sticky: false, // Можно поставить true если нужно "прилипание"
+        sticky: false, 
       },
 
       on: {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Останавливаем автоплей при hover (опционально)
+
     sliderElement.addEventListener('mouseenter', function () {
       whySwiper.autoplay.stop();
       console.log(`Why slider ${index + 1} autoplay stopped`);
