@@ -1,0 +1,100 @@
+.menu {
+    margin-left: auto;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        transition: 0.3s;
+        font-size: var(--size-sm);
+        left: 0;
+        right: 0;
+        align-items: end;
+        visibility: hidden;
+        background-color: #222;
+        padding: var(--size-sm);
+        border-radius: 0 0 var(--size-lg) var(--size-lg);
+
+        // Для десктопной версии
+        @include md {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            flex-direction: row;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            gap: var(--size-sm);
+            align-items: center;
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        font-weight: 700;
+        
+        @include md {
+            text-transform: none;
+            font-size: var(--size-xxs);
+        }
+    }
+
+    &--active {
+        .menu__list {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+        }
+
+        .menu__hamburger {
+            span {
+                &:nth-child(1) {
+                    transform: translateY(calc(var(--size-md) / 2.3)) rotate(25deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(calc(var(--size-md) / -2.5)) rotate(-25deg);
+                }
+            }
+        }
+    }
+
+    &__hamburger {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+        justify-content: space-between;
+        height: var(--size-md);
+
+        // Скрываем гамбургер на десктопе
+        @include md {
+            display: none;
+        }
+
+        span {
+            display: block;
+            border-radius: 10pc;
+            width: 10vw;
+            max-width: 122px;
+            height: var(--size-xxxxs);
+            transition: 0.3s;
+            background-color: var(--color-bright);
+
+            @include sm {
+                width: 7vw;
+            }
+
+            @include md {
+                width: 5vw;
+            }
+        }
+    }
+}

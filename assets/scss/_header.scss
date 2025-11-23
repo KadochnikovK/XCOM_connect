@@ -1,14 +1,20 @@
 .header {
     position: fixed;
-    inset: 0;
+    inset: auto 0 auto;
     z-index: 3;
+
+    * {
+        transition: all .3s;
+    }
+
 
     &__content {
         display: flex;
         background-color: #222;
         padding: var(--size-sm);
-        border-radius: 10pc;
-
+        border-radius: var(--size-lg);
+        align-items: center;
+        position: relative;
     }
 
     &__links {
@@ -17,5 +23,13 @@
         gap: var(--size-sm);
         font-size: var(--size-xxs);
         align-items: center;
+    }
+
+    &--active {
+        .header__content {
+
+            border-radius: var(--size-lg) var(--size-lg) 0 0;
+
+        }
     }
 }

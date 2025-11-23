@@ -19,13 +19,21 @@
   <header class="container header">
     <div class="container__content header__content">
       <img class="logo" src="assets/images/logo.svg" alt="X-COM" />
-      <ul class="header__links">
-        <li><a href="#">Задать вопрос</a></li>
-        <li><a href="#">Получить приглашение </a></li>
-        <li><a href="#">Участвовать в голосовании </a></li>
-        <li><a href="#">Прислать заявку на участие стартапа</a></li>
 
-      </ul>
+      <div class="menu header__menu">
+        <div class="menu__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="menu__list">
+          <a class="menu__link" href="#block">Задать вопрос</a>
+          <a class="menu__link" href="#speakers">Получить приглашение </a>
+          <a class="menu__link" href="#registration">Участвовать в голосовании</a>
+          <a class="menu__link" href="#registration">Прислать заявку на участие стартапа</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main class="main">
@@ -97,7 +105,8 @@
       <div class="why__list">
         <div class="why__grid">
 
-          <div class="why__item">
+          <div class="why__item why__item--list">
+
             <div class="why__element">
               <span class="why__name text-color-main">Найдите ответы:</span> Узнайте о реальных технологических
               решениях, которые уже
@@ -120,12 +129,86 @@
           <div class="why__item why__item--img">
             <img class="why__bg" src="assets/images/why-bg-1.png" alt="">
           </div>
+          <div class="why__item why__item--slider swiper">
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide why__slide">
+
+                <div class="why__element">
+                  <div>
+                    <span class="why__name text-color-main">Найдите ответы:</span> Узнайте о реальных технологических
+                    решениях, которые уже
+                    сегодня закрывают запросы
+                    рынка.
+                    Не теории, а кейсы
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+                <div class="why__element">
+                  <div>
+                    <span class="why__name text-color-main">Прямой выход на клиентов и партнеров:</span> Используйте
+                    конференцию как
+                    эффективный инструмент нетворкинга
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+                <div class="why__element">
+                  <span class="why__name text-color-main">Протестируйте решения:</span> Для инвесторов и фондов — это
+                  уникальная возможность
+                  «запустить» свои портфельные
+                  компании
+                </div>
+              </div>
+
+
+            </div>
+          </div>
         </div>
         <div class="why__grid">
           <div class="why__item why__item--img">
             <img class="why__bg" src="assets/images/why-bg-2.png" alt="">
           </div>
-          <div class="why__item">
+          <div class="why__item why__item--slider swiper">
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide why__slide">
+                <div>
+                  <div class="why__element why__element--blue">
+                    <span class="why__name">Узнайте первыми:</span> Получите инсайды о том, куда движется рынок
+                    цифровизации
+                    от лидеров — экспертов X-Com и
+                    спикеров
+                    Не теории, а кейсы
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+
+                <div class="why__element why__element--blue">
+                  <div>
+                    <span class="why__name">Определите лидеров будущего:</span> Получите готовый список перспективных
+                    проектов, уже проверенный и
+                    одобренный рынком
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+                <div class="why__element why__element--blue">
+                  <div>
+                    <span class="why__name">Увидите уникальный рейтинг:</span> Станьте свидетелем презентации первого
+                    рейтинга
+                    технологических компаний и
+                    стартапов
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="why__item why__item--list">
             <div class="why__element why__element--blue">
               <span class="why__name">Узнайте первыми:</span> Получите инсайды о том, куда движется рынок цифровизации
               от лидеров — экспертов X-Com и
@@ -147,7 +230,7 @@
         </div>
         <div class="why__grid">
 
-          <div class="why__item ">
+          <div class="why__item why__item--list">
             <div class="why__element why__element--grey">
               <span class="why__name text-color-main">Влияйте на итоги:</span> Принимайте прямое <span
                 class="text-color-main">участие в
@@ -166,6 +249,41 @@
           </div>
           <div class="why__item why__item--img">
             <img class="why__bg" src="assets/images/why-bg-3.png" alt="">
+          </div>
+          <div class="why__item why__item--slider swiper">
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide why__slide">
+                <div class="why__element why__element--grey">
+                  <div>
+                    <span class="why__name text-color-main">Влияйте на итоги:</span> Принимайте прямое <span
+                      class="text-color-main">участие в
+                      голосовании</span> за лучшие проекты
+                    и определяйте победителей
+                    Не теории, а кейсы
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+                <div class="why__element why__element--grey">
+                  <div>
+                    Задавайте вопросы спикерам, участвуйте в опросах. Самые внимательные слушатели получат призы и
+                    промокоды
+                    на продукцию
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide why__slide">
+                <div>
+                  <div class="why__element why__element--grey">
+                    Участвуйте в формировании первого рейтинга стартапов
+                    и технологических компаний
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
           </div>
         </div>
 
@@ -685,6 +803,29 @@
         </div>
       </div>
     </section>
+    <section class="container registration">
+      <div class="container__content registration__content">
+        <h2 class="headline">зАДАТЬ СВОЙ ВОПРОС</h2>
+        <div class="registration__forms">
+          <form class="form" id="question-form" action="#">
+
+
+            <div class="form__inputs">
+              <div class="form__item">
+                <input type="text" class="form__input" placeholder="ФИО" name="name" value="" id="name" />
+                <span class="form__required">*</span>
+              </div>
+              <div class="form__item">
+                <input type="text" class="form__input" placeholder="Ваш вопрос" name="question" value=""
+                  id="question" />
+                <span class="form__required">*</span>
+              </div>
+              <button type="submit" class="form__button button" style="margin-left: 0;">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="footer container" id="contacts">
     <div class="footer__content container__content">
@@ -795,6 +936,7 @@
   <script src="assets/js/slider.js"></script>
   <script src="assets/js/speakers.js"></script>
   <script src="assets/js/modal.js"></script>
+  <script src="assets/js/menu.js"></script>
   <script src="assets/js/parallax.js"></script>
 </body>
 

@@ -106,3 +106,21 @@ li {
 .text-color-second {
     color: var(--color-second) !important;
 }
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@include md {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}

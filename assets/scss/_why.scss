@@ -13,12 +13,13 @@
         gap: var(--size-xxs);
     }
 
-
     &__grid {
-        display: grid;
-        gap: var(--size-xxs);
+
+
 
         @include md {
+            display: grid;
+            gap: var(--size-xxs);
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -30,7 +31,6 @@
         overflow: hidden;
         border-radius: var(--size-sm);
         gap: var(--size-xxs);
-
         font-size: var(--size-xs);
 
         &--img {
@@ -38,7 +38,30 @@
             order: -1;
 
             @include md {
-               order: 0;
+                order: 0;
+            }
+        }
+
+        &--slider {
+            /* Показываем слайдер только на mobile */
+            display: block;
+            height: 300px;
+            margin-top: var(--size-sm);
+            /* Высота слайдов */
+
+            @include md {
+                display: none;
+                /* Скрываем слайдер на desktop */
+            }
+        }
+
+        &--list {
+            /* Скрываем список на mobile */
+            display: none;
+
+            @include md {
+                display: flex;
+                /* Показываем список на desktop */
             }
         }
 
@@ -53,14 +76,24 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
-
     }
 
     &__element {
-        border-radius: 10pc;
+        border-radius: var(--size-md);
         background-color: #fff;
         padding: var(--size-xxs) var(--size-sm);
         color: #222;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        font-size: var(--size-sm);
+
+        @include md {
+            
+            min-height: auto;
+            display: block;
+            font-size: var(--size-xxs);
+        }
 
         * {
             font-weight: 700;
@@ -83,4 +116,10 @@
         font-weight: 700;
     }
 
+    /* Стили для Swiper */
+    &__slide {
+        height: 300px;
+        display: flex;
+        align-items: center;
+    }
 }

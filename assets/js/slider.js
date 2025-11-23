@@ -1,5 +1,87 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  const whySliders = document.querySelectorAll('.why__item--slider');
+
+  whySliders.forEach((sliderElement, index) => {
+    const whySwiper = new Swiper(sliderElement, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoHeight: false,
+      height: 300,
+
+      autoplay: {
+        delay: 3000, // Увеличил задержку с 1000 до 3000 мс
+        disableOnInteraction: false,
+      },
+
+      effect: 'slide',
+      speed: 600,
+
+      // Настройки для touch-управления
+      simulateTouch: true,
+      grabCursor: true,
+      touchRatio: 1,
+      touchAngle: 45,
+      allowTouchMove: true, // Добавил разрешение на перемещение
+
+      // Настройки сопротивления
+      resistance: true,
+      resistanceRatio: 0.6,
+
+      // Убрал отключение слайдера на desktop - теперь работает на всех разрешениях
+      breakpoints: {
+        320: {
+          enabled: true,
+          slidesPerView: 1,
+        },
+        768: {
+          enabled: true, // Теперь включен на десктопе
+          slidesPerView: 1,
+        },
+        1024: {
+          enabled: true, // Теперь включен на десктопе
+          slidesPerView: 1,
+        }
+      },
+
+      // Добавил freeMode для перетаскивания мышью как в других слайдерах
+      freeMode: {
+        enabled: true,
+        momentum: true,
+        momentumRatio: 2,
+        momentumBounce: true,
+        momentumBounceRatio: 1,
+        momentumVelocityRatio: 2,
+        sticky: false, // Можно поставить true если нужно "прилипание"
+      },
+
+      on: {
+        init: function () {
+          console.log(`Why slider ${index + 1} initialized`);
+        },
+        slideChange: function () {
+          console.log(`Why slider ${index + 1} changed to slide:`, this.realIndex);
+        }
+      }
+    });
+
+    // Останавливаем автоплей при hover (опционально)
+    sliderElement.addEventListener('mouseenter', function () {
+      whySwiper.autoplay.stop();
+      console.log(`Why slider ${index + 1} autoplay stopped`);
+    });
+
+    sliderElement.addEventListener('mouseleave', function () {
+      whySwiper.autoplay.start();
+      console.log(`Why slider ${index + 1} autoplay started`);
+    });
+  });
+
+  console.log("Why section sliders initialized");
+
   console.log("1: перед speakersSwiper");
+
   const speakersSwiper = new Swiper(".speakers__slider", {
     slidesPerView: "auto",
     spaceBetween: 20,

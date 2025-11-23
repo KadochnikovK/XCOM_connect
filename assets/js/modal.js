@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     initForm('member-form');
     initForm('startup-form');
+    initForm('question-form');
 
     function initForm(formId) {
         const form = document.getElementById(formId);
+        if (!form) return; // Если формы нет на странице, выходим
+
         const formItems = form.querySelectorAll(".form__item");
         const privacyCheckbox = form.querySelector('input[name="privacy-policy"]');
         const privacyError = form.querySelector(".form__item--checkbox .error-message");
@@ -131,20 +133,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            if (!privacyCheckbox.checked) {
+            // Проверяем чекбокс приватности только если он есть в форме
+            if (privacyCheckbox && !privacyCheckbox.checked) {
                 addError(privacyCheckbox, "Необходимо ваше согласие");
                 isValid = false;
             }
 
             if (isValid) {
-                const formType = formId === 'member-form' ? 'участника' : 'стартапа';
+                const formType = getFormType(formId);
                 const formData = collectFormData(form, formType);
 
                 console.log(`Данные формы ${formType}:`, formData);
 
                 showModal(
-                    "Регистрация прошла успешно",
-                    `Ваша заявка ${formType} принята. Мы свяжемся с вами в ближайшее время`,
+                    getSuccessTitle(formId),
+                    getSuccessMessage(formId),
                     "Хорошо"
                 );
 
@@ -153,36 +156,72 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+        function getFormType(formId) {
+            switch(formId) {
+                case 'member-form': return 'участника';
+                case 'startup-form': return 'стартапа';
+                case 'question-form': return 'вопроса';
+                default: return '';
+            }
+        }
+
+        function getSuccessTitle(formId) {
+            switch(formId) {
+                case 'member-form': 
+                case 'startup-form': 
+                    return "Регистрация прошла успешно";
+                case 'question-form': 
+                    return "Вопрос отправлен";
+                default: return "Успешно";
+            }
+        }
+
+        function getSuccessMessage(formId) {
+            switch(formId) {
+                case 'member-form': 
+                    return "Ваша заявка участника принята. Мы свяжемся с вами в ближайшее время";
+                case 'startup-form': 
+                    return "Ваша заявка стартапа принята. Мы свяжемся с вами в ближайшее время";
+                case 'question-form': 
+                    return "Ваш вопрос принят. Мы ответим на него в ближайшее время";
+                default: return "Данные успешно отправлены";
+            }
+        }
+
         function collectFormData(form, formType) {
             const baseData = {
-                name: form.elements.name.value.trim(),
-                surname: form.elements.surname?.value.trim() || '',
-                email: form.elements.email.value.trim(),
-                phone: form.elements.phone.value.trim(),
-                company: form.elements.company.value.trim(),
-                job: form.elements.job.value.trim(),
-                privacyPolicy: form.elements["privacy-policy"].checked,
+                name: form.elements.name?.value.trim() || '',
+                email: form.elements.email?.value.trim() || '',
+                phone: form.elements.phone?.value.trim() || '',
+                company: form.elements.company?.value.trim() || '',
+                job: form.elements.job?.value.trim() || '',
+                privacyPolicy: form.elements["privacy-policy"]?.checked || false,
             };
 
             if (formType === 'участника') {
-                baseData.taxId = form.elements.taxId.value.trim();
-            } else {
-                baseData.site = form.elements.site.value.trim();
-                baseData.presentation = form.elements.presentation.value.trim();
+                baseData.taxId = form.elements.taxId?.value.trim() || '';
+            } else if (formType === 'стартапа') {
+                baseData.site = form.elements.site?.value.trim() || '';
+                baseData.presentation = form.elements.presentation?.value.trim() || '';
+            } else if (formType === 'вопроса') {
+                baseData.question = form.elements.question?.value.trim() || '';
             }
 
             return baseData;
         }
 
-        privacyCheckbox.addEventListener("change", function () {
-            if (this.checked) {
-                this.closest(".form__item").classList.remove("form__item--not-valid");
-                if (privacyError) privacyError.style.display = "none";
-            }
-        });
+        // Добавляем обработчик для чекбокса приватности только если он есть
+        if (privacyCheckbox) {
+            privacyCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    this.closest(".form__item").classList.remove("form__item--not-valid");
+                    if (privacyError) privacyError.style.display = "none";
+                }
+            });
+        }
 
         form.addEventListener("input", function (e) {
-            if (e.target.tagName === "INPUT") {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
                 const formItem = e.target.closest(".form__item");
                 formItem.classList.remove("form__item--not-valid");
                 const errorElement = formItem.querySelector(".error-message");
@@ -203,12 +242,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalHeadline.textContent = title;
         modalText.textContent = text;
-
-        // Очищаем и устанавливаем текст кнопки
-        modalButton.innerHTML = '';
-        // const buttonSpan = document.createElement('span');
-        // buttonSpan.className = 'button__text';
-        // buttonSpan.textContent = buttonText;
         modalButton.textContent = buttonText;
 
         modal.style.display = "flex";
